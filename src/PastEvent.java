@@ -34,7 +34,7 @@ public class PastEvent extends Event{
     }
 
     public void setPaymentDetails(String paymentStatus, boolean requiresExtension) {
-        this.paymentDetails = "The event cost was " +  getEventCost() + " and the payment status is " + paymentStatus + 
+        this.paymentDetails = "The event cost was " +  pastEventCost + " and the payment status is " + paymentStatus + 
         "\n" + "The Customer requires extension?: " + requiresExtension;
     }
 
