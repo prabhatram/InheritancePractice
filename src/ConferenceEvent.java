@@ -35,11 +35,10 @@ public class ConferenceEvent extends Event{
         this.dinnerCost = dinnerCost;
     }
 
-
     @Override
     public void calculateEventCost(){
-        super.calculateEventCost();
-        conferenceEventCost = getEventCost() + ((breakfastCost + lunchCost + dinnerCost) * getTotalParticipants() * getTotalEventDays());
+        
+        conferenceEventCost = baseEventCost + (baseEventCost * tax) + ((breakfastCost + lunchCost + dinnerCost) * getTotalParticipants() * getTotalEventDays());
     }
 
 

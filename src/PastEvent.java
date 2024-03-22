@@ -29,8 +29,7 @@ public class PastEvent extends Event{
 
     @Override
     public void calculateEventCost(){
-        super.calculateEventCost();
-        pastEventCost = getEventCost();
+        System.out.println("Event cost calculation not applicable to past events");
     }
 
     public void setPaymentDetails(String paymentStatus, boolean requiresExtension) {
