@@ -7,6 +7,15 @@ public class ConferenceEvent extends Event{
     private double dinnerCost;
     private double conferenceEventCost;
 
+    public ConferenceEvent(String eventID, String eventName, String eventLocation, String pointOfContact, int totalParticipants, int totalEventDays, 
+    double breakfastCost, double lunchCost, double dinnerCost){
+        super(eventID, eventName, eventLocation, pointOfContact, totalParticipants, totalEventDays);
+        this.breakfastCost = breakfastCost;
+        this.lunchCost = lunchCost;
+        this.dinnerCost = dinnerCost;
+    }
+
+
     public double getBreakfastCost(){
         return breakfastCost;
     }
@@ -27,18 +36,9 @@ public class ConferenceEvent extends Event{
         return dinnerCost;
     }
 
-    public ConferenceEvent(String eventID, String eventName, String eventLocation, String pointOfContact, int totalParticipants, int totalEventDays, 
-    double breakfastCost, double lunchCost, double dinnerCost){
-        super(eventID, eventName, eventLocation, pointOfContact, totalParticipants, totalEventDays);
-        this.breakfastCost = breakfastCost;
-        this.lunchCost = lunchCost;
-        this.dinnerCost = dinnerCost;
-    }
-
 
     @Override
     public void calculateEventCost(){
-        super.calculateEventCost();
         conferenceEventCost = getEventCost() + ((breakfastCost + lunchCost + dinnerCost) * getTotalParticipants() * getTotalEventDays());
     }
 

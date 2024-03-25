@@ -1,6 +1,6 @@
 
 
-public class Event{
+public abstract class Event{
 
     public static final double insuranceCost = 1000.00;
     public static final double baseEventCost= 5000;
@@ -25,6 +25,10 @@ public class Event{
         this.totalParticipants = totalParticipants;
         this.totalEventDays = totalEventDays;
 
+    }
+
+    public static String someMethod(){
+        return "hello";
     }
 
     public String getEventID(){
@@ -92,7 +96,9 @@ public class Event{
         return eventID + " " + eventName + " " + eventLocation + " " + pointOfContact + " " + eventCost + " " + totalParticipants + " " + totalEventDays;
     }
 
-    public void calculateEventCost(){
-        this.eventCost = baseEventCost + (baseEventCost * tax) + insuranceCost;
-    }
+    abstract public void calculateEventCost();
+    
+    
+
+    
 }

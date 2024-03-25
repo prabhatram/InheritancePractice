@@ -1,9 +1,11 @@
 public class PastEvent extends Event{
 
+    public static final double pastEventCost = 10_000;
+
     private String paymentStatus;
     private boolean requiresExtension;
     private String paymentDetails;
-    private double pastEventCost;
+    //private double pastEventCost;
 
     public PastEvent(String eventID, String eventName, String eventLocation, String pointOfContact, int totalParticipants, int totalEventDays) {
 
@@ -27,11 +29,13 @@ public class PastEvent extends Event{
         this.requiresExtension = requiresExtension;
     }
 
-    @Override
-    public void calculateEventCost(){
-        super.calculateEventCost();
-        pastEventCost = getEventCost();
+
+    public void calculateCost(){
+        
+        double cost = 1000 + (1000 * tax);
     }
+
+    
 
     public void setPaymentDetails(String paymentStatus, boolean requiresExtension) {
         this.paymentDetails = "The event cost was " +  pastEventCost + " and the payment status is " + paymentStatus + 
@@ -44,11 +48,9 @@ public class PastEvent extends Event{
 
     @Override
     public String toString(){
-        return "Conference Event details: " + "\n" +
-        "Event ID: " + getEventID() + "\n" +
-        "Event Name: " + getEventName() + "\n" +
-        "Event Location: " + getEventLocation() + "\n" +
-        "Total participants: " + getTotalParticipants() + "\n" +
+        
+        return "\n" + "Event ID:" + getEventID() + "\n" + "The past event details: " + "\n" + 
+        
         "The payment details are as follows: " + "\n" + 
         paymentDetails;
     }
